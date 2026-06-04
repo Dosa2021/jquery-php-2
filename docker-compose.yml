@@ -7,7 +7,7 @@ services:
     ports:
       - "8080:80"
     volumes:
-      - .:/var/www/html
+      - ./php:/var/www/html
     networks:
       - app-network
     # depends_on:

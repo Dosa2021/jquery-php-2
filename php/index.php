@@ -1,11 +1,9 @@
 <?php
+require('fuga.php');
 
 $requestUri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $requestMethod = $_SERVER['REQUEST_METHOD'];
 $path = rtrim($requestUri, '/') ?: '/';
-
-var_dump('p--------');
-var_dump($path);
 
 switch (true) {
     case $path === '/api/users' && $requestMethod === 'GET':

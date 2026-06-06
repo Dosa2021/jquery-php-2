@@ -14,7 +14,7 @@
             $.ajax({
                 dataType: 'json',
                 type: 'GET',
-                url: '/api/users',
+                url: '/api/users.php',
                 success: function (users) {
                     console.log('ok-------------');
                     console.log(users);

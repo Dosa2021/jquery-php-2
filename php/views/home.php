@@ -1,25 +1,26 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'].'/models/TestModel.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'/views/layout/header.php';
 
 $userModel = new TestModel();
 
 $tests = $userModel->getAllTests();
 
-var_dump('test-------');
-var_dump($tests);
+// var_dump('test-------');
+// var_dump($tests);
 ?>
-
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <title>PHP + jQuery + Docker</title>
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-</head>
-<body>
-    <h1>Ajax通信のテスト</h1>
-    <button id="ajax-btn">データを取得</button>
-    <div id="result"></div>
+    <main>
+        <!-- <h1>Ajax通信のテスト</h1>
+        <button id="ajax-btn">データを取得</button>
+        <div id="result"></div> -->
+        <div class="main">
+            <img src="/public/img/mei.webp" alt="">
+            <h1 class="header-title header-title-first">
+                腸腸腸<span class="text-combine">⭐︎</span>
+            </h1>
+            <h2 class="header-title header-title-second">イイかんじ</h2>
+        </div>
+    </main>
     <script>
         $('#ajax-btn').on('click', function () {
             $.ajax({

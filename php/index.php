@@ -1,5 +1,5 @@
 <?php
-require('fuga.php');
+// require('fuga.php');
 
 $requestUri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $requestMethod = $_SERVER['REQUEST_METHOD'];

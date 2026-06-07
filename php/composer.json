@@ -1,0 +1,19 @@
+{
+    "name": "dosa/jquery-php",
+    "description": "PHP + jQuery + Docker sample",
+    "type": "project",
+    "require": {
+        "php": ">=8.2",
+        "davedevelopment/phpmig": "^1.7",
+        "pimple/pimple": "^3.6"
+    },
+    "autoload": {
+        "classmap": [
+            "models/",
+            "config/"
+        ]
+    },
+    "scripts": {
+        "phpmig": "phpmig"
+    }
+}

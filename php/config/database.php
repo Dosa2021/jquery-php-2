@@ -1,28 +1,36 @@
 <?php
-class Database {
-    private $host = "mysql";
-    private $db_name = "test";
-    private $username = "root";
-    private $password = "root_password";
-    private $pdo;
 
-    public function connect() {
+class Database {
+    private array $config;
+    private ?PDO $pdo = null;
+
+    public function __construct() {
+        $this->config = require __DIR__ . '/db.php';
+    }
+
+    public function connect(): PDO {
         if ($this->pdo === null) {
             try {
-                // 安全な接続のために文字コード（charset）やエラーモードを設定
                 $this->pdo = new PDO(
-                    "mysql:host={$this->host};dbname={$this->db_name};charset=utf8mb4",
-                    $this->username,
-                    $this->password,
+                    sprintf(
+                        'mysql:host=%s;port=%s;dbname=%s;charset=%s',
+                        $this->config['host'],
+                        $this->config['port'],
+                        $this->config['dbname'],
+                        $this->config['charset']
+                    ),
+                    $this->config['user'],
+                    $this->config['password'],
                     [
-                        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION, // エラー時に例外を投げる
-                        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC, // 連想配列で結果を返す
+                        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+                        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
                     ]
                 );
             } catch (PDOException $e) {
-                die("データベース接続失敗: " . $e->getMessage());
+                die('データベース接続失敗: ' . $e->getMessage());
             }
         }
+
         return $this->pdo;
     }
 }

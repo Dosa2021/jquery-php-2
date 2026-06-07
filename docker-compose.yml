@@ -6,8 +6,15 @@ services:
     container_name: php-apache
     ports:
       - "8080:80"
+    environment:
+      DB_HOST: mysql
+      DB_PORT: 3306
+      DB_NAME: test
+      DB_USER: root
+      DB_PASSWORD: root_password
     volumes:
       - ./php:/var/www/html
+      - composer-cache:/root/.composer
     networks:
       - app-network
     depends_on:
@@ -47,3 +54,6 @@ services:
 networks:
   app-network:
     driver: bridge
+
+volumes:
+  composer-cache:

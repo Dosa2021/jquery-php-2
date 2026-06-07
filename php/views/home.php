@@ -1,13 +1,13 @@
 <?php
-// require_once $_SERVER['DOCUMENT_ROOT'].'/models/TestModel.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'/models/TestModel.php';
 require_once $_SERVER['DOCUMENT_ROOT'].'/views/layout/header.php';
 
-// $userModel = new TestModel();
+$userModel = new TestModel();
 
-// $tests = $userModel->getAllTests();
+$tests = $userModel->getAllTests();
 
-// var_dump('test-------');
-// var_dump($tests);
+var_dump('test-------');
+var_dump($tests);
 ?>
     <main>
         <!-- <h1>Ajax通信のテスト</h1>

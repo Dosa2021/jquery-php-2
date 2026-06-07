@@ -1,3 +1,14 @@
+<?php
+require_once $_SERVER['DOCUMENT_ROOT'].'/models/TestModel.php';
+
+$userModel = new TestModel();
+
+$tests = $userModel->getAllTests();
+
+var_dump('test-------');
+var_dump($tests);
+?>
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>

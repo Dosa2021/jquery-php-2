@@ -21,6 +21,7 @@ $tests = $userModel->getAllTests();
             <h2 class="header-title header-title-second">イイかんじ</h2>
         </div>
     </main>
+    <?php require_once $_SERVER['DOCUMENT_ROOT'].'/views/layout/footer.php' ?>
     <script>
         $('#ajax-btn').on('click', function () {
             $.ajax({
@@ -41,5 +42,3 @@ $tests = $userModel->getAllTests();
             });
         });
     </script>
-</body>
-</html>
